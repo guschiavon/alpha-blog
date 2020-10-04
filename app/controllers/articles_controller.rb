@@ -14,6 +14,7 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id]) # in order to populate the article view for edit, we call the same method of 'show' which pulls the data from the database
+    
   end
 
   def create
@@ -34,6 +35,12 @@ class ArticlesController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to articles_path
   end
 
 end
