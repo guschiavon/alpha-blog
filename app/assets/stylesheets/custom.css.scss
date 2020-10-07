@@ -1,0 +1,45 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+#body {
+  margin: 0;
+}
+
+p,
+a,
+span,
+input,
+ol,
+ul,
+li,
+button {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Bebas Neue', sans-serif;
+}
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
+#home-container {
+  margin-top: 30px;
+}
