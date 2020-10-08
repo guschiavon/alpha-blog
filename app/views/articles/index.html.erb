@@ -8,6 +8,7 @@
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title"><%= link_to article.title, article_path(article) %></h5>
+          <span class="text-muted">Posted by: <%= article.user.username %></span>
           <p class="card-text"><%= article.description %></p>
           <%= link_to "Edit", edit_article_path(article), class: "btn btn-outline-secondary" %>
           <button type="button" class="btn btn-outline-danger">Danger</button>
