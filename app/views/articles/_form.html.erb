@@ -1,15 +1,4 @@
-<% if @article.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
-
-    <ul>
-      <% @article.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-  
+<%= render 'shared/errors', obj: @article %>
 <%= form_with(model: @article, local: true) do |form| %>
   <div class="field">
     <%= form.label :title %>
@@ -19,6 +8,10 @@
   <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description %>
+  </div>
+  <div class="field">
+    <%= form.label :author %>
+    <%= form.text_field :author %>
   </div>
 
   <div class="actions">

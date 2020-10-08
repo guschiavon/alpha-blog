@@ -1,4 +1,4 @@
-
+<%= render 'shared/errors', obj: @user %>
   
 <%= form_with(model: @user, local: true) do |form| %>
   <div class="field">
@@ -8,12 +8,12 @@
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email, placeholder: "Enter valid email" %>
+    <%= form.email_field :email, placeholder: "Enter valid email" %>
   </div>
 
   <div class="field">
     <%= form.label :password %>
-    <%= form.text_field :password %>
+    <%= form.password_field :password, placeholder: "Enter your password" %>
   </div>
 
   <div class="actions">
