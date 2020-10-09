@@ -17,19 +17,22 @@ ol,
 ul,
 li,
 button {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 300;
 }
 
 h1,
 h2,
 h3,
-h4 {
-  font-family: 'Bebas Neue', sans-serif;
+h4,
+#logo {
+  font-family: 'Allerta Stencil', sans-serif;
+  color: var(--light);
 }
 html,
 body {
   height: 100%;
+  background-color: #3e3e3e;
 }
 
 #page-content {
@@ -42,4 +45,12 @@ body {
 
 #home-container {
   margin-top: 30px;
+}
+
+
+
+.jumbotron {
+  background-image: asset-url('FULLRES-EONCOPYRIGHT-Capture-One-Catalog1180.jpg');
+  background-position: center;
+  background-size: cover;
 }
