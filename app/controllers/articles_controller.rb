@@ -18,7 +18,6 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params) # require the top level key of 'article' (the database structure) and permit the title and description to be available to create the new article
-    @article.author = User.first.username
     if @article.save # saves the record on the database
       flash[:notice] = "Congrats! Your article has been created"
       redirect_to @article
