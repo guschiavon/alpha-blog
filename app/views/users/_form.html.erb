@@ -1,22 +1,29 @@
 <%= render 'shared/errors', obj: @user %>
   
 <%= form_with(model: @user, local: true) do |form| %>
-  <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username, placeholder: "Between 3-25 charac." %>
+  <div class="input-group mb-3 w-50 mx-auto">
+    <div class="input-group-prepend">
+      <%= form.label :username, class: "input-group-text", id: "inputGroup-sizing-default" %>
+    </div>
+    <%= form.text_field :username, placeholder: "Between 3-25 characters", class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.email_field :email, placeholder: "Enter valid email" %>
+  <div class="input-group mb-3 w-50 mx-auto">
+    <div class="input-group-prepend">
+      <%= form.label :email, class: "input-group-text", id: "inputGroup-sizing-default" %>
+    </div>
+    <%= form.text_field :email, placeholder: "Enter a valid email address", class: "form-control" %>
   </div>
-
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password, placeholder: "Enter your password" %>
+  
+  <div class="input-group mb-3 w-50 mx-auto">
+    <div class="input-group-prepend">
+      <%= form.label :password, class: "input-group-text", id: "inputGroup-sizing-default" %>
+    </div>
+    <%= form.password_field :password, placeholder: "Enter a strong password", class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit "Sign Up" %>
+    <%= form.submit "Sign Up", class: "btn btn-success align-self-center mr-1" %>
+    <%= link_to 'Cancel', root_path, class: "btn btn-dark align-self-center" %> 
   </div>
 <% end %>
