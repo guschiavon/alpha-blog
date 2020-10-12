@@ -1,12 +1,10 @@
-<div class="container">
-  <div class="alert alert-success" role="alert">
-    <p id="notice"><%= notice %></p>
-  </div>
+<div class="container mt-4">
 
-  <p>
+
+  <h1 class="my-4">
     <%= @article.title %>
-  </p>
-  <span class="text-muted">Author: <%= @article.user.username if @article.user %></span>
+  </h1>
+  <%= link_to gravatar_for(@article.user), user_path(@article.user) %><span class="text-muted">Author: <%= @article.user.username if @article.user %></span>
   <p>
     <%= @article.description %>
   </p>

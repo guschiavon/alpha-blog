@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :destroy, :update]
   
   def index
-    @articles = Article.all # Instance variables allow us to use ERB on the view to render data dynamically; they are bound to the 
+    @articles = Article.paginate(page: params[:page], per_page: 5)
   end
 
   def show
