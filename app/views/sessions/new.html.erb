@@ -1,12 +1,9 @@
-<%= render 'shared/errors', obj: @user %>
+
+
+<h1 class="text-center mt-4">Log In</h1> 
+
+<%= form_with(scope: :session, url: login_path, local: true) do |form| %>
   
-<%= form_with(model: @user, local: true) do |form| %>
-  <div class="input-group mb-3 w-50 mx-auto">
-    <div class="input-group-prepend">
-      <%= form.label :username, class: "input-group-text", id: "inputGroup-sizing-default" %>
-    </div>
-    <%= form.text_field :username, placeholder: "Between 3-25 characters", class: "form-control" %>
-  </div>
 
   <div class="input-group mb-3 w-50 mx-auto">
     <div class="input-group-prepend">
@@ -19,11 +16,11 @@
     <div class="input-group-prepend">
       <%= form.label :password, class: "input-group-text", id: "inputGroup-sizing-default" %>
     </div>
-    <%= form.password_field :password, placeholder: "Enter a strong password", class: "form-control" %>
+    <%= form.password_field :password, placeholder: "Enter your password", class: "form-control" %>
   </div>
 
   <div class="actions text-center">
-    <%= form.submit(@user.new_record? ? "Sign up" : "Update Profile", class: "btn btn-success align-self-center mr-1") %>
+    <%= form.submit "Log in", class: "btn btn-success align-self-center mr-1" %>
     <%= link_to 'Cancel', root_path, class: "btn btn-dark align-self-center" %> 
   </div>
 <% end %>
