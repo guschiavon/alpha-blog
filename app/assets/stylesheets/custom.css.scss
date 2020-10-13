@@ -1,5 +1,11 @@
 @import 'bootstrap/dist/css/bootstrap';
 
+$custom-accent-color: #21c700;
+
+@mixin transition {
+  transition: 0.2s all;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,6 +13,16 @@
 }
 #body {
   margin: 0;
+}
+
+a {
+  color: $custom-accent-color;
+  @include transition;
+  &:hover {
+    text-decoration: none;
+    color: darken($custom-accent-color, 20);
+    @include transition;
+  }
 }
 
 p,
@@ -27,12 +43,12 @@ h3,
 h4,
 #logo {
   font-family: 'Allerta Stencil', sans-serif;
-  color: var(--light);
+  color: $custom-accent-color;
 }
 html,
 body {
   height: 100%;
-  background-color: #3e3e3e;
+  background-color: #222;
 }
 
 #page-content {
