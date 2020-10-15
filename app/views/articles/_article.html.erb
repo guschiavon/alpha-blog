@@ -8,8 +8,10 @@
             <h5 class="card-title"><%= link_to article.title, article_path(article) %></h5>
             <span class="text-muted">Posted by: <%= article.user.username if article.user %></span>
             <p class="card-text"><%= truncate(article.description, :lenght => 50) %></p>
-            <%= link_to "Edit", edit_article_path(article), class: "btn btn-outline-secondary" %>
-            <button type="button" class="btn btn-outline-danger">Delete</button>
+            <% if logged_in? && article.user == current_user %> 
+              <%= link_to "Edit", edit_article_path(article), class: "btn btn-outline-secondary" %>
+              <%= link_to "Delete", method: :destroy, class: "btn btn-outline-danger", data: { confirm: "Are you sure you want to delete?" } %>
+            <% end %>
             <p class="card-text mt-2">
               <small class="text-muted">Posted <%= time_ago_in_words(article.created_at) %> ago.</small>
               <br/>

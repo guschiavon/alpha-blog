@@ -5,12 +5,15 @@
   <h1><%= @user.username %>'s Profile</h1>
 
   <%= gravatar_for @user, size: 200 %>
+  <% if logged_in? && @user == current_user %> 
   <%= link_to "Edit profile", edit_user_path, class: "btn btn-outline-light mt-4" %>
-  
+  <% end %>
   
 
   <h3 class="mt-4">Articles by <%= @user.username %>:</h3>
+  <% if logged_in? && @user == current_user %> 
   <%= link_to "Create article", new_article_path, class: "btn btn-outline-primary mt-4" %>
+  <% end %>
 
   <%= render 'articles/article' %>
 
