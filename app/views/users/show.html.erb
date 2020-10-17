@@ -3,8 +3,13 @@
   <h1><%= @user.username %>'s Profile</h1>
 
   <%= gravatar_for @user, size: 200 %>
-  <% if logged_in? && @user == current_user %> 
-  <%= link_to "Edit profile", edit_user_path, class: "btn btn-outline-light mt-4" %>
+  <% if logged_in? %>
+    <% if @user == current_user %> 
+      <%= link_to "Edit profile", edit_user_path(@user), class: "btn btn-outline-light mt-4" %>
+    <% end %>
+    <% if current_user.admin? %>
+      <%= link_to "Delete Profile", user_path(@user), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure? User's articles will be deleted! This cannot be undone!" } %>
+    <% end %>
   <% end %>
   
 
