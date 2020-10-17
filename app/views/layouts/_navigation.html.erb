@@ -28,12 +28,12 @@
       
       <% if logged_in? %>
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.username %></a>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.username %><%= "(Admin)" if current_user.admin? %></a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         
           <%= link_to "Your profile", user_path(current_user), class: "dropdown-item" %>
           <%= link_to "Edit profile", edit_user_path(current_user), class: "dropdown-item" %>
-        
+        <%= link_to "Delete profile", user_path(current_user), class: "dropdown-item text-danger", method: :delete, data: { confirm: "Are you sure? All your articles will also be deleted! This cannot be undone!" } %>
           <%= link_to "Log Out", logout_path, class: "dropdown-item", method: :delete %>
         </div>
       

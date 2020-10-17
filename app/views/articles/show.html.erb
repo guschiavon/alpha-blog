@@ -5,7 +5,7 @@
     <%= @article.title %>
   </h1>
   <%= link_to gravatar_for(@article.user), user_path(@article.user) %><span class="text-muted">Author: <%= @article.user.username if @article.user %></span>
-  <p>
+  <p class="text-light">
     <%= @article.description %>
   </p>
   <% if logged_in? && @article.user == current_user %> 
