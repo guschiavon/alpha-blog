@@ -2,7 +2,9 @@
   <% @articles.each do |article| %>
     <div class="col-lg-6">
       <div class="card my-4">
-        <img src="..." class="card-img-top" alt="...">
+      <div class="img-h-sm">
+        <%= image_tag(article.cover_picture, alt: "gus dev") %>
+      </div>
         <div class="card-body">
           <h5 class="card-title"><%= link_to article.title, article_path(article) %></h5>
           <span class="text-muted">Posted by: <%= article.user.username if article.user %></span>

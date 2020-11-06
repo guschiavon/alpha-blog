@@ -4,8 +4,12 @@
   <h1 class="my-4">
     <%= @article.title %>
   </h1>
-  <%= link_to gravatar_for(@article.user), user_path(@article.user) %><span class="text-muted">Author: <%= @article.user.username if @article.user %></span>
-  <p class="text-light">
+  <div class="img-h-md mb-4">
+    <%= image_tag @article.cover_picture, class: "img-fluid" %>
+  </div>
+  <div class="mr-auto"><%= link_to gravatar_right_for(@article.user), user_path(@article.user) %></div>
+  <span class="text-muted mb-2">Author: <%= @article.user.username if @article.user %></span>
+  <p class="text-light mt-2">
     <%= @article.description %>
   </p>
   <% if logged_in? && (@article.user == current_user || current_user.admin?) %> 

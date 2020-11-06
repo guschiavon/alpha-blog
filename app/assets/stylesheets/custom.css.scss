@@ -25,6 +25,10 @@ a {
   }
 }
 
+img {
+  max-width: 100%;
+}
+
 p,
 a,
 span,
@@ -104,4 +108,32 @@ body {
 }
 .apple_pagination a:hover, .apple_pagination a:focus {
   text-decoration: underline;
+}
+
+// Cover image
+.img-h-md {
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.5em;
+  img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+  }
+}
+.img-h-sm {
+  height: 250px;
+  width: 100%;
+  overflow: hidden;
+  img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+  }
+}
+
+.card {
+  border: none;
+  overflow: hidden;
 }

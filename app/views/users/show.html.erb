@@ -2,7 +2,7 @@
   
   <h1><%= @user.username %>'s Profile</h1>
 
-  <%= gravatar_for @user, size: 200 %>
+  <%= gravatar_center_for @user, size: 200 %>
   <% if logged_in? %>
     <% if @user == current_user %> 
       <%= link_to "Edit profile", edit_user_path(@user), class: "btn btn-outline-light mt-4" %>
