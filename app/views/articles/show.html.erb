@@ -4,7 +4,7 @@
   <h1 class="my-4">
     <%= @article.title %>
   </h1>
-  <div class="img-h-md mb-4">
+  <div class="img-h-md mb-4 br-1">
     <%= image_tag @article.cover_picture, class: "img-fluid" %>
   </div>
   <div class="mr-auto"><%= link_to gravatar_right_for(@article.user), user_path(@article.user) %></div>

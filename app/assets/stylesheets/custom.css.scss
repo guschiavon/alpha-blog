@@ -55,6 +55,10 @@ body {
   background-color: #222;
 }
 
+h1 {
+  font-size: 10rem;
+}
+
 #page-content {
   flex: 1 0 auto;
 }
@@ -110,12 +114,27 @@ body {
   text-decoration: underline;
 }
 
+// Border radius
+$radius: 0.5em;
+
+.br-1 {
+  border-radius: $radius;
+}
+.br-2 {
+  border-radius: $radius * 2;
+}
+.br-3 {
+  border-radius: $radius * 3;
+}
+.br-4 {
+  border-radius: $radius * 4;
+}
+
 // Cover image
 .img-h-md {
   height: 500px;
   width: 100%;
   overflow: hidden;
-  border-radius: 0.5em;
   img {
     object-fit: cover;
     object-position: center;
@@ -136,4 +155,11 @@ body {
 .card {
   border: none;
   overflow: hidden;
+}
+
+@media (min-width: 576px) {
+  .card-deck .card {
+      margin-right: unset;
+      margin-left: unset;
+  }
 }

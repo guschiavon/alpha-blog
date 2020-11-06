@@ -8,7 +8,7 @@
       <%= link_to "Edit profile", edit_user_path(@user), class: "btn btn-outline-light mt-4" %>
     <% end %>
     <% if current_user.admin? %>
-      <%= link_to "Delete Profile", user_path(@user), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure? User's articles will be deleted! This cannot be undone!" } %>
+      <%= link_to "Delete Profile", user_path(@user), method: :delete, class: "btn btn-danger mt-4", data: { confirm: "Are you sure? User's articles will be deleted! This cannot be undone!" } %>
     <% end %>
   <% end %>
   

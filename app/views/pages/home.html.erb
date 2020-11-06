@@ -1,17 +1,15 @@
 <div class="container" id="home-container">
   <div class="jumbotron">
-    <h1 class="display-2">Gus.dev</h1>
+    <h1 >Gus.dev</h1>
     <p class="lead">Let's build cool shit.</p>
     <hr class="my-4">
     <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
     <%= link_to "Sign-up!", signup_path, class: "btn btn-primary btn-lg" %>
   </div>
-  <main>
-    <h3 class="my-4 display-5">From the Blog</h3>
+  <main class="mb-4">
+    <h3 class="my-4 display-2">From the Blog</h3>
     <div class="card text-center">
-      <div class="card-header">
-        Featured Article
-      </div>
+      
       <div class="card mb-3">
         <div class="img-h-md">
           <%= image_tag Article.last.cover_picture %>
