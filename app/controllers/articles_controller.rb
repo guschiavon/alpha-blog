@@ -3,11 +3,9 @@ class ArticlesController < ApplicationController
   before_action :require_user, except: [:show, :index]
   before_action :require_same_user, only: [:edit, :update, :destroy]
   
-  # article.cover_picture.attach(params[:cover_picture]) # Where do I call this for the image??
-  # article.cover_picture.attached?
 
   def index
-    @articles = Article.paginate(page: params[:page], per_page: 6)
+    @articles = Article.all
   end
 
   def show
