@@ -14,3 +14,11 @@ require 'faker'
         tech: Faker::ProgrammingLanguage.name
     )
 end
+
+(1..5).each do |article|
+    Article.create!(
+      title: Faker::ChuckNorris.fact,
+      description: Faker::Lorem.paragraph(sentence_count: 5),
+      user_id: 8
+    )
+end
